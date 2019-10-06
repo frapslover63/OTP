@@ -17,6 +17,11 @@ public class MainMenuManager : MonoBehaviour
         }
     }
 
+    public void ToLevel1()
+    {
+        SceneService.Instance.ChangeScene(SceneEnum.Level1);
+    }
+
     public void ToSettings()
     {
         SceneService.Instance.ChangeScene(SceneEnum.Settings);

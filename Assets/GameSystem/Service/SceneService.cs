@@ -19,8 +19,15 @@ namespace GameSystem.Service
 
         void Awake()
         {
-            Instance = this;
             isActive = false;
+            if (null == Instance)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
             DontDestroyOnLoad(this);
         }
 
@@ -33,7 +40,7 @@ namespace GameSystem.Service
                 isActive = false;
             }
         }
-        
+
         public void ChangeScene(SceneEnum sceneEnum)
         {
             scene = sceneEnum.ToString();
@@ -47,6 +54,7 @@ namespace GameSystem.Service
             {
                 yield return null;
             }
+
             isActive = true;
         }
 
@@ -72,4 +80,3 @@ namespace GameSystem.Service
         }
     }
 }
-

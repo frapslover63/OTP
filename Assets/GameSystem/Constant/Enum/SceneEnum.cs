@@ -2,9 +2,9 @@
 {
     public enum SceneEnum
     {
-        Stage1,
-        Stage2,
-        Stage3,
+        Level1,
+        Level2,
+        Level3,
         Settings,
         MainMenu,
         Loading
