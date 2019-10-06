@@ -22,10 +22,6 @@ namespace Player
         public float HInput;
         public float VInput;
 
-        // Character Properties
-        public int starCounter = 0;
-        public GameObject starText;
-
         void Update()
         {
             if(isGrounded && m_Jump && m_rb.velocity.y < 0.001f){
@@ -45,7 +41,7 @@ namespace Player
                 SetGravityScale(1f);
             }
 
-            starText.GetComponent<Text>().text = starCounter.ToString();
+            Data.Instance.starText.GetComponent<Text>().text = Data.Instance.starCounter.ToString();
         }
         void OnEnable ()
         {
@@ -94,7 +90,7 @@ namespace Player
             // }
             else if ("Star".Equals(other.gameObject.tag))
             {
-                starCounter++;
+                Data.Instance.starCounter++;
                 Destroy(other.gameObject);
             }
         }
