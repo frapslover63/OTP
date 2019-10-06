@@ -90,6 +90,10 @@
           <e p="Tst.cs" t="Include" />
         </e>
         <e p="Scripts" t="Include">
+          <e p="Button" t="Include">
+            <e p="BackMainMenu.cs" t="Include" />
+            <e p="Pause.cs" t="Include" />
+          </e>
           <e p="Player" t="Include">
             <e p="Controller.cs" t="Include" />
             <e p="Data.cs" t="Include" />

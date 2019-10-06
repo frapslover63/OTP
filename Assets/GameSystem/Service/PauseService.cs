@@ -5,22 +5,31 @@ namespace GameSystem.Service
 {
     public class PauseService : MonoBehaviour
     {
+        public GameObject PauseCanvas;
         public static PauseService Instance;
         private bool Pause = false;
+        private GameObject Canvas;
+        private Transform Panel;
 
         private void Awake()
         {
+            Canvas = Instantiate(PauseCanvas);
+            Panel = Canvas.transform.GetChild(0);
             Instance = this;
+            DontDestroyOnLoad(this);
         }
 
-        public void PauseGame()
+        public void PauseButtonTrigger()
         {
-            Pause = true;
-        }
-
-        public void UnPauseGame()
-        {
-            Pause = false;
+            if (IsPaused())
+            {
+                Pause = false;
+            }
+            else
+            {
+                Pause = true;
+            }
+            Panel.gameObject.SetActive(Pause);
         }
 
         public bool IsPaused()
