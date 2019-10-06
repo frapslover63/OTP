@@ -29,8 +29,7 @@ namespace Player
         void Update()
         {
             if(isGrounded && m_Jump && m_rb.velocity.y < 0.001f){
-                isGrounded = false;
-                Debug.Log("masuk if");
+                isGrounded = false;;
                 this.GetComponent<Rigidbody>().AddForce(Vector3.up * 400f);
             }
             else if (!isGrounded && m_Jump && m_rb.velocity.y < 0)
