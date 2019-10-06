@@ -68,6 +68,11 @@
           </e>
         </e>
         <e p="Scenes" t="Include">
+          <e p="About" t="Include">
+            <e p="Script" t="Include">
+              <e p="AboutManager.cs" t="Include" />
+            </e>
+          </e>
           <e p="Loading" t="Include">
             <e p="Script" t="Include">
               <e p="LoadingScript.cs" t="Include" />
@@ -88,6 +93,8 @@
         <e p="Scripts" t="Include">
           <e p="Player" t="Include">
             <e p="Controller.cs" t="Include" />
+            <e p="Data.cs" t="Include" />
+            <e p="Environment.cs" t="Include" />
             <e p="Input.cs" t="Include" />
           </e>
           <e p="Trigger" t="Include">
