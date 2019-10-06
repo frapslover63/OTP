@@ -88,6 +88,8 @@
         <e p="Scripts" t="Include">
           <e p="Player" t="Include">
             <e p="Controller.cs" t="Include" />
+            <e p="Data.cs" t="Include" />
+            <e p="Environment.cs" t="Include" />
             <e p="Input.cs" t="Include" />
           </e>
           <e p="Trigger" t="Include">
