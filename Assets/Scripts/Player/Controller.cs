@@ -14,7 +14,7 @@ namespace Player
         private Transform m_Cam;
         private Vector3 m_CamForward;
         private Vector3 m_Move;
-        private float movement_speed = 10f;
+        private float movement_speed = 5f;
         Quaternion targetRotation;
 
         public bool m_Jump;
