@@ -8,13 +8,15 @@ namespace GameSystem.Entity
     [Serializable]
     public class CheckPoint
     {
-        [SerializeField]private float xPos;
-        [SerializeField]private float yPos;
-        [SerializeField]private float zPos;
-        [SerializeField]private float xRot;
-        [SerializeField]private float yRot;
-        [SerializeField]private float zRot;
-        [SerializeField]private int starCount;
+        [SerializeField] private float xPos;
+        [SerializeField] private float yPos;
+        [SerializeField] private float zPos;
+        [SerializeField] private float xRot;
+        [SerializeField] private float yRot;
+        [SerializeField] private float zRot;
+        [SerializeField] private int starCount;
+        [SerializeField] private float life;
+        [SerializeField] private string level;
 
         public float XPos
         {
@@ -57,6 +59,17 @@ namespace GameSystem.Entity
             get => starCount;
             set => starCount = value;
         }
+
+        public float Life
+        {
+            get => life;
+            set => life = value;
+        }
+
+        public string Level
+        {
+            get => level;
+            set => level = value;
+        }
     }
 }
-
