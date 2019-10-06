@@ -27,6 +27,7 @@ namespace Player
         void Update()
         {
             Controller.m_Jump = JumpButton.Pressed;
+            Debug.Log(Controller.m_Jump);
             Controller.HInput = LeftJoystick.Horizontal;
             Controller.VInput = LeftJoystick.Vertical;
 
