@@ -1,4 +1,5 @@
 ﻿using Cinemachine;
+using GameSystem.Service;
 using UnityEngine;
 
 namespace Player
@@ -12,9 +13,9 @@ namespace Player
 
         protected float CameraAngleX;
         protected float CameraAngleY;
-        protected float CameraAngleSpeed = 0.02f;
-        public float TouchSensitivity_x = 10f;
-        public float TouchSensitivity_y = 10f;
+        protected float CameraAngleSpeed = 0.01f;
+        public float TouchSensitivity_x = 8f;
+        public float TouchSensitivity_y = 8f;
 
         // Start is called before the first frame update
         void Start()
@@ -26,12 +27,13 @@ namespace Player
         // Update is called once per frame
         void Update()
         {
+            if(PauseService.Instance.IsPaused()) return;
             Controller.m_Jump = JumpButton.Pressed;
             Controller.HInput = LeftJoystick.Horizontal;
             Controller.VInput = LeftJoystick.Vertical;
 
-            CameraAngleX += SwipeCamera.TouchDist.x * CameraAngleSpeed;
-            CameraAngleY += SwipeCamera.TouchDist.y * CameraAngleSpeed;
+            CameraAngleX += -1 * SwipeCamera.TouchDist.x * CameraAngleSpeed;
+            CameraAngleY += -1 * SwipeCamera.TouchDist.y * CameraAngleSpeed;
             if(0f == SwipeCamera.TouchDist.x){
                 CameraAngleX = 0f;
             }

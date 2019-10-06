@@ -20,6 +20,7 @@ namespace Assets.GameSystem.Constant
         public const int DEFAULT_VOLUME = 100;
         public const int DEFAULT_LIGHTING = 100;
         public const int DEFAULT_FOV = 70;
+        public const float MOVEMENT_SPEED = 8f;
 
         private void Awake()
         {

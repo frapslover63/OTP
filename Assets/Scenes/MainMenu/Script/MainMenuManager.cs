@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Assets.GameSystem.Constant.Enum;
+using GameSystem.Constant;
 using GameSystem.Service;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -25,6 +26,11 @@ public class MainMenuManager : MonoBehaviour
     public void ToSettings()
     {
         SceneService.Instance.ChangeScene(SceneEnum.Settings);
+    }
+
+    public void ToAbout()
+    {
+        SceneService.Instance.ChangeScene(SceneEnum.About);
     }
 
     public void ExitGame()

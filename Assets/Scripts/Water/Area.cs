@@ -5,12 +5,12 @@ namespace Assets.Scripts.Water
     /// <summary>
     /// Area that belongs to some water
     /// </summary>
-    public class WaterArea : MonoBehaviour
+    public class Area : MonoBehaviour
     {
         /// <summary>
         /// Water shader properties of the water this area belong
         /// </summary>
-        [SerializeField] private WaterPropertyBlockSetter waterProperties;
+        [SerializeField] private PropertyBlockSetter waterProperties;
 
         public MaterialPropertyBlock WaterPropertyBlock
         {

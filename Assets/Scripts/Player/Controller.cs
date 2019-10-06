@@ -1,6 +1,7 @@
 ﻿using Assets.GameSystem.Constant;
 using UnityEngine;
 using UnityEngine.UI;
+using GameSystem.Service;
 
 namespace Player
 {
@@ -14,7 +15,6 @@ namespace Player
         private Transform m_Cam;
         private Vector3 m_CamForward;
         private Vector3 m_Move;
-        private float movement_speed = 7f;
         Quaternion targetRotation;
 
         public bool m_Jump;
@@ -24,6 +24,7 @@ namespace Player
 
         void Update()
         {
+            if(PauseService.Instance.IsPaused()) return;
             if(isGrounded && m_Jump && m_rb.velocity.y < 0.001f){
                 isGrounded = false;;
                 this.GetComponent<Rigidbody>().AddForce(Vector3.up * 400f);
@@ -73,8 +74,8 @@ namespace Player
             }
 
             this.transform.rotation = targetRotation;
-            this.transform.position += Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up) * VInput * Time.deltaTime * movement_speed;
-            this.transform.position += Vector3.ProjectOnPlane(Camera.main.transform.right, Vector3.up) * HInput * Time.deltaTime * movement_speed;
+            this.transform.position += Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up) * VInput * Time.deltaTime * GameConstants.MOVEMENT_SPEED;
+            this.transform.position += Vector3.ProjectOnPlane(Camera.main.transform.right, Vector3.up) * HInput * Time.deltaTime * GameConstants.MOVEMENT_SPEED;
 
         }
 
@@ -86,6 +87,11 @@ namespace Player
             {
                 isGrounded = false;
                 this.GetComponent<Rigidbody>().AddForce(Vector3.up * 12f, ForceMode.Impulse);
+            }
+            else if ("Mushroom-2".Equals(other.gameObject.tag))
+            {
+                isGrounded = false;
+                this.GetComponent<Rigidbody>().AddForce(Vector3.up * 20f, ForceMode.Impulse);
             }
             else if ("Star".Equals(other.gameObject.tag))
             {
@@ -101,6 +107,14 @@ namespace Player
             //     isGrounded = false;
             //     this.GetComponent<Rigidbody>().AddForce(Vector3.up * 10f, ForceMode.Impulse);
             // }
+            if("Water".Equals(other.gameObject.tag)){
+                if(null == EventService.LoadCheckPoint().XPos){
+                    this.transform.position = new Vector3(46.51f, 1.83f, -0.07f);
+                }
+                else{
+                    this.transform.position = new Vector3(EventService.LoadCheckPoint().XPos, EventService.LoadCheckPoint().YPos, EventService.LoadCheckPoint().ZPos);
+                }
+            }
         }
     }
 }
