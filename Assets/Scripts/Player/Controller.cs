@@ -1,6 +1,7 @@
 ﻿using Assets.GameSystem.Constant;
 using UnityEngine;
 using UnityEngine.UI;
+using GameSystem.Service;
 
 namespace Player
 {
@@ -101,6 +102,14 @@ namespace Player
             //     isGrounded = false;
             //     this.GetComponent<Rigidbody>().AddForce(Vector3.up * 10f, ForceMode.Impulse);
             // }
+            if("Water".Equals(other.gameObject.tag)){
+                if(null == EventService.LoadCheckPoint().XPos){
+                    this.transform.position = new Vector3(46.51f, 1.83f, -0.07f);
+                }
+                else{
+                    this.transform.position = new Vector3(EventService.LoadCheckPoint().XPos, EventService.LoadCheckPoint().YPos, EventService.LoadCheckPoint().ZPos);
+                }
+            }
         }
     }
 }
