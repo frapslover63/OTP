@@ -12,7 +12,7 @@ namespace Player
 
         protected float CameraAngleX;
         protected float CameraAngleY;
-        protected float CameraAngleSpeed = 0.1f;
+        protected float CameraAngleSpeed = 0.02f;
         public float TouchSensitivity_x = 10f;
         public float TouchSensitivity_y = 10f;
 
@@ -27,7 +27,6 @@ namespace Player
         void Update()
         {
             Controller.m_Jump = JumpButton.Pressed;
-            Debug.Log(Controller.m_Jump);
             Controller.HInput = LeftJoystick.Horizontal;
             Controller.VInput = LeftJoystick.Vertical;
 
@@ -39,12 +38,6 @@ namespace Player
             if(0f == SwipeCamera.TouchDist.y){
                 CameraAngleY = 0f;
             }
-        
-
-            // Camera.main.transform.position = transform.position + Quaternion.AngleAxis(CameraAngleX, Vector3.up) * new Vector3(0, 3, 6);
-            // Camera.main.transform.rotation = Quaternion.LookRotation(transform.position + Vector3.up * 2f - Camera.main.transform.position, Vector3.up);
-            // Debug.Log("CameraAngleX :" + CameraAngleX);
-            // Debug.Log("CameraAngleY :" + CameraAngleY);
         }
 
         public float GetAxisCustom(string axisName)

@@ -14,7 +14,7 @@ namespace Player
         private Transform m_Cam;
         private Vector3 m_CamForward;
         private Vector3 m_Move;
-        private float movement_speed = 5f;
+        private float movement_speed = 7f;
         Quaternion targetRotation;
 
         public bool m_Jump;
@@ -25,8 +25,7 @@ namespace Player
         void Update()
         {
             if(isGrounded && m_Jump && m_rb.velocity.y < 0.001f){
-                isGrounded = false;
-                Debug.Log("masuk if");
+                isGrounded = false;;
                 this.GetComponent<Rigidbody>().AddForce(Vector3.up * 400f);
             }
             else if (!isGrounded && m_Jump && m_rb.velocity.y < 0)
@@ -83,11 +82,11 @@ namespace Player
             if("Ground".Equals(other.gameObject.tag)){
                 isGrounded = true;
             }
-            // else if ("Mushroom".Equals(other.gameObject.tag))
-            // {
-            //     isGrounded = false;
-            //     this.GetComponent<Rigidbody>().AddForce(Vector3.up * 10f, ForceMode.Impulse);
-            // }
+            else if ("Mushroom".Equals(other.gameObject.tag))
+            {
+                isGrounded = false;
+                this.GetComponent<Rigidbody>().AddForce(Vector3.up * 12f, ForceMode.Impulse);
+            }
             else if ("Star".Equals(other.gameObject.tag))
             {
                 Data.Instance.starCounter++;
@@ -97,11 +96,11 @@ namespace Player
 
         private void OnTriggerEnter(Collider other) {
             //Kalo Pake Double Collider yang 1nya trigger
-            if ("Mushroom".Equals(other.gameObject.tag))
-            {
-                isGrounded = false;
-                this.GetComponent<Rigidbody>().AddForce(Vector3.up * 10f, ForceMode.Impulse);
-            }
+            // if ("Mushroom".Equals(other.gameObject.tag))
+            // {
+            //     isGrounded = false;
+            //     this.GetComponent<Rigidbody>().AddForce(Vector3.up * 10f, ForceMode.Impulse);
+            // }
         }
     }
 }
