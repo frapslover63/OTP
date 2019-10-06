@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Assets.GameSystem.Constant.Enum;
+using GameSystem.Constant;
 using GameSystem.Service;
 using UnityEngine;
 using UnityEngine.SceneManagement;

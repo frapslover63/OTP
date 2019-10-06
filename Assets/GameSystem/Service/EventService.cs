@@ -49,7 +49,8 @@ namespace GameSystem.Service
         /// if CheckPoint not Exist</returns>
         public static bool CheckPointExist()
         {
-            return FileHelper<CheckPoint>.FileExist(CHECKPOINT_FILES);
+            string file = PathConstants.GetPath(CHECKPOINT_FILES);
+            return FileHelper<CheckPoint>.FileExist(file);
         }
 
 
