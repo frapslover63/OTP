@@ -24,6 +24,7 @@ namespace Player
 
         void Update()
         {
+            if(PauseService.Instance.IsPaused()) return;
             if(isGrounded && m_Jump && m_rb.velocity.y < 0.001f){
                 isGrounded = false;;
                 this.GetComponent<Rigidbody>().AddForce(Vector3.up * 400f);

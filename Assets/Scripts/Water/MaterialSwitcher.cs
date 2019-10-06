@@ -8,7 +8,7 @@ namespace Assets.Scripts.Water
     /// It allows objects to be under the lake or be in the different water
     /// Also switching material to diffuse after exiting the water gives a bit performance
     /// </summary>
-    public class WaterMaterialSwitcher : MonoBehaviour
+    public class MaterialSwitcher : MonoBehaviour
     {
         [SerializeField] private Renderer renderer;
         [SerializeField] private Material waterMaterial;
@@ -26,7 +26,7 @@ namespace Assets.Scripts.Water
         {
             if (collider.tag == "Water")
             {
-                var waterPropertyBlock = collider.GetComponent<WaterArea>().WaterPropertyBlock;
+                var waterPropertyBlock = collider.GetComponent<Area>().WaterPropertyBlock;
 
                 renderer.sharedMaterial = waterMaterial;
                 renderer.SetPropertyBlock(waterPropertyBlock);

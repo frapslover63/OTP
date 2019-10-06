@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Justin Susanto\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Justin Susanto\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_OTP.349757245.00" t="ExcludeRecursive" />
-    <e p="G:\Unity Proj\GD3\OTP" t="IncludeRecursive">
+    <e p="A:\Tugas\Sem 7\Game Dev 3\OTP" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -33,6 +31,7 @@
           </e>
           <e p="Service" t="Include">
             <e p="EventService.cs" t="Include" />
+            <e p="PauseService.cs" t="Include" />
             <e p="PreferencesService.cs" t="Include" />
             <e p="SceneService.cs" t="Include" />
           </e>
@@ -91,6 +90,10 @@
           <e p="Tst.cs" t="Include" />
         </e>
         <e p="Scripts" t="Include">
+          <e p="Button" t="Include">
+            <e p="BackMainMenu.cs" t="Include" />
+            <e p="Pause.cs" t="Include" />
+          </e>
           <e p="Player" t="Include">
             <e p="Controller.cs" t="Include" />
             <e p="Data.cs" t="Include" />
@@ -101,9 +104,9 @@
             <e p="CheckPoint.cs" t="Include" />
           </e>
           <e p="Water" t="Include">
-            <e p="WaterArea.cs" t="Include" />
-            <e p="WaterMaterialSwitcher.cs" t="Include" />
-            <e p="WaterPropertyBlockSetter.cs" t="Include" />
+            <e p="Area.cs" t="Include" />
+            <e p="MaterialSwitcher.cs" t="Include" />
+            <e p="PropertyBlockSetter.cs" t="Include" />
           </e>
         </e>
         <e p="Shaders" t="Include">
@@ -163,5 +166,7 @@
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
+    <e p="C:\Users\Yoshihio\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Yoshihio\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_OTP.-812033731.00" t="ExcludeRecursive" />
   </component>
 </project>

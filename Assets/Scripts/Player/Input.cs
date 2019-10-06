@@ -1,4 +1,5 @@
 ﻿using Cinemachine;
+using GameSystem.Service;
 using UnityEngine;
 
 namespace Player
@@ -26,6 +27,7 @@ namespace Player
         // Update is called once per frame
         void Update()
         {
+            if(PauseService.Instance.IsPaused()) return;
             Controller.m_Jump = JumpButton.Pressed;
             Controller.HInput = LeftJoystick.Horizontal;
             Controller.VInput = LeftJoystick.Vertical;
