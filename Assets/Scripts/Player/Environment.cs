@@ -11,7 +11,7 @@ public class Environment : MonoBehaviour
     void Update()
     {
         //Cave 1 complete
-        if(Data.Instance.starCounter == 3)
+        if(3 == Data.Instance.starCounter)
         {
             Destroy(boulderBlock1);
         }
