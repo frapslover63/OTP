@@ -14,7 +14,7 @@ public class MainMenuManager : MonoBehaviour
     {
         if (EventService.CheckPointExist())
         {
-            continueButton.SetActive(true);
+            //continueButton.SetActive(true);
         }
     }
 
