@@ -27,6 +27,11 @@ public class MainMenuManager : MonoBehaviour
         SceneService.Instance.ChangeScene(SceneEnum.Settings);
     }
 
+    public void ToAbout()
+    {
+        SceneService.Instance.ChangeScene(SceneEnum.About);
+    }
+
     public void ExitGame()
     {
         Application.Quit();

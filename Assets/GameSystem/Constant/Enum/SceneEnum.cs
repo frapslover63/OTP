@@ -7,6 +7,7 @@
         Level3,
         Settings,
         MainMenu,
-        Loading
+        Loading,
+        About
     }
 }
