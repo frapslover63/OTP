@@ -8,7 +8,7 @@ namespace Assets.Scripts.Water
     /// Put it on the scene, add renderers and set up your water.
     /// </summary>
     [ExecuteInEditMode]
-    public class WaterPropertyBlockSetter : MonoBehaviour
+    public class PropertyBlockSetter : MonoBehaviour
     {
         [SerializeField] private Renderer[] waterRenderers;
 
