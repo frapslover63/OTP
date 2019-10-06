@@ -12,7 +12,7 @@ namespace Player
 
         protected float CameraAngleX;
         protected float CameraAngleY;
-        protected float CameraAngleSpeed = 0.1f;
+        protected float CameraAngleSpeed = 0.02f;
         public float TouchSensitivity_x = 10f;
         public float TouchSensitivity_y = 10f;
 
