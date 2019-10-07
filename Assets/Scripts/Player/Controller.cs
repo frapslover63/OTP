@@ -113,6 +113,11 @@ namespace Player
                 isGrounded = false;
                 this.GetComponent<Rigidbody>().AddForce(Vector3.up * 12f, ForceMode.Impulse);
             }
+            else if ("Mushroom-2".Equals(other.gameObject.tag))
+            {
+                isGrounded = false;
+                this.GetComponent<Rigidbody>().AddForce(Vector3.up * 18f, ForceMode.Impulse);
+            }
             else if ("Star".Equals(other.gameObject.tag))
             {
                 Data.Instance.starCounter++;
