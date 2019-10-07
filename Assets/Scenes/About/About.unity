@@ -600,7 +600,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Credits\n\nCoder:\nLeonardo Pratama - 00000013610\nJustin Susanto - 00000013613\nMario
+  m_text: "Credits\n\nCoder:\nLeonardo Pratama - 00000013411\nJustin Susanto - 00000013613\nMario
     Alexander - 00000013728\nHandriki Kasa - 0000014261\nDesign:\nCatherine Veda -
     00000020153\nGabby Oktaviany - 00000020704\nJennifer Tashia - 00000021067 \nAudrey
     Vialitta - 00000025975\nThanks To :\nWirawan Istiono\nAgatha Maisie Tjandra\n\n"
@@ -631,7 +631,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 41.85
+  m_fontSize: 51.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

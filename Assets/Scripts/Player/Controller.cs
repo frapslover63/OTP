@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using GameSystem.Service;
+using GameSystem.Entity;
+using TMPro;
 
 namespace Player
 {
@@ -11,22 +13,43 @@ namespace Player
     
         Rigidbody m_rb;
     
+        public GameObject main_camera;
         // Character Joystick Movement Variable
         private Transform m_Cam;
         private Vector3 m_CamForward;
         private Vector3 m_Move;
+        private float movement_speed = 7f;
         Quaternion targetRotation;
+
+        public AudioClip audioClipJump;
+        public AudioClip audioClipLand;
+
+        private AudioSource cameraAudioSource;
+        private AudioSource playerAudioSource;
 
         public bool m_Jump;
         private float verticalVelocity;
         public float HInput;
         public float VInput;
 
+        void Awake() {
+            GameSettings preference = PreferencesService.LoadSettings();
+            cameraAudioSource = main_camera.GetComponent<AudioSource>();
+            playerAudioSource = this.gameObject.GetComponent<AudioSource>();
+            Debug.Log(((float) preference.Volume/100f));
+            playerAudioSource.volume = ((float) preference.Volume/100f);
+            cameraAudioSource.volume = ((float) preference.Volume/100f);
+        }
+
+        void Start(){
+            cameraAudioSource.Play();
+        }
         void Update()
         {
-            if(PauseService.Instance.IsPaused()) return;
             if(isGrounded && m_Jump && m_rb.velocity.y < 0.001f){
-                isGrounded = false;;
+                isGrounded = false;
+                playerAudioSource.clip = audioClipJump;
+                playerAudioSource.Play();
                 this.GetComponent<Rigidbody>().AddForce(Vector3.up * 400f);
             }
             else if (!isGrounded && m_Jump && m_rb.velocity.y < 0)
@@ -41,7 +64,7 @@ namespace Player
                 SetGravityScale(1f);
             }
 
-            Data.Instance.starText.GetComponent<Text>().text = Data.Instance.starCounter.ToString();
+            Data.Instance.starText.GetComponent<TextMeshProUGUI>().text = Data.Instance.starCounter.ToString();
         }
         void OnEnable ()
         {
@@ -74,24 +97,21 @@ namespace Player
             }
 
             this.transform.rotation = targetRotation;
-            this.transform.position += Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up) * VInput * Time.deltaTime * GameConstants.MOVEMENT_SPEED;
-            this.transform.position += Vector3.ProjectOnPlane(Camera.main.transform.right, Vector3.up) * HInput * Time.deltaTime * GameConstants.MOVEMENT_SPEED;
+            this.transform.position += Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up) * VInput * Time.deltaTime * movement_speed;
+            this.transform.position += Vector3.ProjectOnPlane(Camera.main.transform.right, Vector3.up) * HInput * Time.deltaTime * movement_speed;
 
         }
 
         private void OnCollisionEnter(Collision other) {
             if("Ground".Equals(other.gameObject.tag)){
                 isGrounded = true;
+                playerAudioSource.clip = audioClipLand;
+                playerAudioSource.Play();
             }
             else if ("Mushroom".Equals(other.gameObject.tag))
             {
                 isGrounded = false;
                 this.GetComponent<Rigidbody>().AddForce(Vector3.up * 12f, ForceMode.Impulse);
-            }
-            else if ("Mushroom-2".Equals(other.gameObject.tag))
-            {
-                isGrounded = false;
-                this.GetComponent<Rigidbody>().AddForce(Vector3.up * 20f, ForceMode.Impulse);
             }
             else if ("Star".Equals(other.gameObject.tag))
             {
