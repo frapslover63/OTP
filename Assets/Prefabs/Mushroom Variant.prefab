@@ -69,12 +69,12 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: c4eaf47f2701d6a4f920b7da8e5f83be,
         type: 3}
       propertyPath: m_Name
-      value: Mushroom
+      value: Mushroom Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3254143560832186553, guid: c4eaf47f2701d6a4f920b7da8e5f83be,
         type: 3}
       propertyPath: m_TagString
-      value: Mushroom
+      value: Mushroom-2
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c4eaf47f2701d6a4f920b7da8e5f83be,
         type: 3}
